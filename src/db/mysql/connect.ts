@@ -17,20 +17,17 @@ const create_db_connection = async () => {
         return await createConnection(
             {
                 type: "mysql",
+                host: "mysql.railway.internal",
                 port: 3306,
-
-                database: "kaffy",
-                host: "localhost",
                 username: "root",
-                password: "",
-
+                password: "uVIVWddiHLUhYuBnelAIiNnniQwAmYcu",
+                database: "railway",
                 entities: [User, Token],
-
                 synchronize: false,
-
             }
-        )
+        );
     } catch (error) {
+        console.error("Error establishing database connection:", error);
         throw error;
     }
 }
@@ -39,4 +36,3 @@ export {
     DBConnection,
     create_db_connection
 }
-
