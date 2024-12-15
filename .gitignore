@@ -1,0 +1,13 @@
+dist
+node_modules
+.DS_Store
+socket_server/.env
+logs
+files
+files
+files
+ormconfig.json
+.env
+.vercel
+
+ToUpdate.txt
