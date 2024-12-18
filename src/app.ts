@@ -1,6 +1,12 @@
 import express from 'express';
 import * as bodyParser from 'body-parser';
 import AuthRoutes from './routes/authentication'
+import CategoryRoutes from './routes/category'
+import OrderItemRoutes from './routes/order_item'
+import OrderRoutes from './routes/order'
+import ProductRoutes from './routes/product'
+import SizeRoutes from './routes/size'
+import StripeRoutes from './routes/stripe'
 
 import { error_handler_middleware } from './middleware/error-handler';
 import { isProdEnv } from './utils/logger';
@@ -41,6 +47,12 @@ class App {
 
     this.ping();
     this.httpServer.use('/api/auth', AuthRoutes);
+    this.httpServer.use('/api/order-item', OrderItemRoutes);
+    this.httpServer.use('/api/category', CategoryRoutes);
+    this.httpServer.use('/api/order', OrderRoutes);
+    this.httpServer.use('/api/product', ProductRoutes);
+    this.httpServer.use('/api/size', SizeRoutes);
+    this.httpServer.use('/api/stripe', StripeRoutes);
     this.httpServer.use(error_handler_middleware)
   }
 

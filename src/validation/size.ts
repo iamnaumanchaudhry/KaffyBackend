@@ -19,7 +19,3 @@ export const edit_size_checks = [
 export const get_size_by_id_checks = [
     check('id', 'Size ID is required.').not().isEmpty()
 ];
-
-export const get_all_sizes_checks = [
-    check('storeId', 'Store ID is required.').optional().not().isEmpty()
-];

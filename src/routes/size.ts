@@ -11,8 +11,7 @@ import {
     add_size_checks,
     delete_size_checks,
     edit_size_checks,
-    get_size_by_id_checks,
-    get_all_sizes_checks,
+    get_size_by_id_checks
 } from "../validation/size";
 
 import { authenticateUser } from "../middleware/authentication";
@@ -22,12 +21,12 @@ const router: Router = express.Router();
 
 router.post('/add-size', add_size_checks, validate_request_schema, authenticateUser, createSize);
 
-router.post('/delete-size', delete_size_checks, validate_request_schema, authenticateUser, getAllSizes);
+router.post('/delete-size', delete_size_checks, validate_request_schema, authenticateUser, deleteSize);
 
-router.get('/get-sizes', edit_size_checks, validate_request_schema, authenticateUser, getSizeById);
+router.get('/get-sizes', validate_request_schema, getAllSizes);
 
-router.get('/get-size/:id', get_size_by_id_checks, validate_request_schema, authenticateUser, updateSize);
+router.get('/get-size/:id', get_size_by_id_checks, validate_request_schema, authenticateUser, getSizeById);
 
-router.post('/edit-size', get_all_sizes_checks, validate_request_schema, authenticateUser, deleteSize);
+router.post('/edit-size', edit_size_checks, validate_request_schema, authenticateUser, updateSize);
 
 export default router;
