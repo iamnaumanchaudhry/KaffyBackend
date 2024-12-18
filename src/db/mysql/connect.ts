@@ -19,15 +19,15 @@ const create_db_connection = async () => {
                 type: "mysql",
                 port: 3306,
 
-                database: "kaffy",
-                host: "localhost",
-                username: "root",
-                password: "",
-
-                // host: "mysql.railway.internal",
+                // database: "kaffy",
+                // host: "localhost",
                 // username: "root",
-                // password: "uVIVWddiHLUhYuBnelAIiNnniQwAmYcu",
-                // database: "railway",
+                // password: "",
+
+                host: "mysql.railway.internal",
+                username: "root",
+                password: "uVIVWddiHLUhYuBnelAIiNnniQwAmYcu",
+                database: "railway",
 
                 entities: [User, Token],
                 synchronize: false,
