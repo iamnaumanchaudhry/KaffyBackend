@@ -19,7 +19,7 @@ const start = async () => {
         // cert: fs.readFileSync( `${appRoot}/credentials/server.crt` ),
       },
       app);
-    servers.listen(port, () => {
+    servers.listen(port, "0.0.0.0", () => {
       console.log(`
           ################################################
           #  Server listening on port: ${port}           #
@@ -29,7 +29,7 @@ const start = async () => {
       logger.info(`Starting server at ${new Date()}`);
     });
   } else {
-    app.listen(port, () => {
+    app.listen(port, "0.0.0.0", () => {
       console.log(`
         ################################################
         #  Server listening on port: ${port}
